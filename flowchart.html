@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Series Convergence</title>
+        <meta name="A simple flowchart for deciding the convergence of a series" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- JS for displaying LaTeX -->
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <!-- JS for querying doc elements -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Script for smooth scrolling -->
+        <script src="scrolling.js"></script>
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono" rel="stylesheet">
+        <link rel="stylesheet" href="flowtheme.css">
+    </head>
+    <body>
+        <main>
+            <section class = "slide" id = "header">
+                <h1>
+                    Does \(\sum\limits_{n=0}^\infty S = a_n\) converge or diverge?
+                </h1>
+                <div id = "start">
+                    <button class = "icon-button" onclick = "smoothScroll(document.getElementById('question-1'))"">
+                        <svg class = "icon-button__icon" role = "img" width = "3rem" height = "3rem" viewBox = "0 0 25 25" aria-labelledby="start-name start-description" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                            <title id = "start-name">Continue</title>
+                            <desc id = "start-description">Downward arrow</desc>
+                            <path d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+            <section class = "slide" id = "question-1">
+                <div class = "slide-content">
+                    <p>
+                        Does the \(\lim\limits_{n \to \infty}a_n=0\)?
+                    </p>
+                    <div class = "decision">
+                        <button onclick = "smoothScroll(document.getElementById('question-2'))">Yes</button>
+                        <button onclick = "smoothScroll(document.getElementById('conclusion-1'))">No</button>
+                    </div>
+                </div>
+            </section>
+            <section class = "slide" id = "question-2">
+                <div class = "slide-content">
+                    <p>
+                        Is S... 
+                        <ol>
+                            <li>alternating,</li>
+                             <li>\(a_n \geq 0\), and</li>
+                            <li>\(a_n\) decreasing?</li>
+                        </ol>
+                    </p>
+                    <div class = "decision">
+                        <button onclick="smoothScroll(document.getElementById('conclusion-2'))">Yes</button>
+                        <button onclick="smoothScroll(document.getElementById('question-3'))">No</button>
+                    </div>
+                </div>
+            </section>
+            <section class = "slide" id = "question-3">
+                <div class = "slide-content">
+                    <p>
+                        Does \(a_n\) have factorials?
+                    </p>
+                    <div class = "decision">
+                        <button onclick="smoothScroll(document.getElementById('conclusion-3'))">Yes</button>
+                        <button onclick="smoothScroll(document.getElementById('question-4'))">No</button>
+                    </div>
+                </div>
+            </section>
+            <section class = "slide" id = "question-4">
+                <div class = "slide-content">
+                    <p>
+                        Is \(a_n\) exponential?
+                    </p>
+                    <div class = "decision">
+                        <button onclick="smoothScroll(document.getElementById('conclusion-3'))">Yes</button>
+                        <button onclick="smoothScroll(document.getElementById('question-5'))">No</button>
+                    </div>
+                </div>
+            </section>
+            <section class = "slide" id = "question-5">
+                <div class = "slide-content">
+                    <p>
+                        Does \(a_n=\frac{1}{n^p\ln^q{(n)}\ln^r{(\ln{(n)})}}\)?
+                    </p>
+                    <div class = "decision">
+                        <button onclick="smoothScroll(document.getElementById('conclusion-5'))">Yes</button>
+                        <button onclick="smoothScroll(document.getElementById('question-6'))">No</button>
+                    </div>
+                </div>
+            </section>
+            <section class = "slide" id = "question-6">
+                <div class = "slide-content">
+                    <p>
+                        Is \(a_n\)...
+                        <ol>
+                            <li>decreasing,</li>
+                            <li>continuous, and</li>
+                            <li>integrable?</li>
+                        </ol>
+                    </p>
+                    <div class = "decision">
+                        <button onclick="smoothScroll(document.getElementById('conclusion-6-1'))">Yes</button>
+                        <button onclick="smoothScroll(document.getElementById('question-6-2'))">No</button>
+                    </div>
+                </div>
+            </section>
+            <section class = "slide" id = "conclusion-1">
+                <div class = "slide-content">
+                    <p class = "conclusion">
+                        Series diverges by the <span>Test for Divergence</span>.
+                    </p>
+                </div>
+            </section>
+            <section class = "slide" id = "conclusion-2">
+                <div class = "slide-content">
+                    <p class = "conclusion">
+                        Series diverges by the <span>Alternating Series Test</span>.
+                    </p>
+                </div>
+            </section>
+            <section class = "slide" id = "conclusion-3">
+                <div class = "slide-content">
+                    <p class = "conclusion">
+                        Use the <span>Ratio Test</span>.
+                    </p>
+                </div>
+            </section>
+            <section class = "slide" id = "conclusion-4">
+                <div class = "slide-content">
+                    <p class = "conclusion">
+                        Use the <span>Root Test</span>.
+                    </p>
+                </div>
+            </section>
+            <section class = "slide" id = "conclusion-5">
+                <div class = "slide-content">
+                    <p class = "conclusion">
+                        Use the <span>Generalized p-test</span>.
+                    </p>
+                </div>
+            </section>
+            <section class = "slide" id = "conclusion-6-1">
+                <div class = "slide-content">
+                    <p class = "conclusion">
+                        Use the <span>Integral Test</span>.
+                    </p>
+                </div>
+            </section>
+            <section class = "slide" id = "conclusion-6-2">
+                <div class = "slide-content">
+                    <p class = "conclusion">
+                        Use the <span>Direct or Limit Comparison Tests</span>.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

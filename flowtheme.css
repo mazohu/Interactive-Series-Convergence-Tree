@@ -1,0 +1,142 @@
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --main: #bfd7ea;
+    --dark: #2d3047;
+    --contrast: #e0ca3c;
+}
+
+body {
+    background: var(--main);
+    color: var(--dark);
+    font-family: 'Space Mono', monospace;
+}
+
+main {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.slide {
+    position: relative;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;  
+}
+
+#header {
+    font-size: 2.5vw;
+}
+
+#start {
+    display: flex;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 64% 36% 36% 64% / 30% 37% 63% 70%;
+    box-shadow: none;
+    transition: box-shadow 300ms 100ms ease-in;
+}
+
+.icon-button {
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border: 0px;
+}
+
+.icon-button__icon {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--dark);
+}
+
+#start:hover {
+    box-shadow: inset 8em 0 0 0 var(--contrast);
+}
+
+#start:hover .icon-button {
+    animation: point-down 1s 400ms ease-out alternate backwards infinite;
+}
+
+@keyframes point-down {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
+
+.slide-content {
+    background-color: var(--contrast);
+    height: 80vh;
+    width: 80vw;
+    border-radius: 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p {
+    font-size: 3.8vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.decision button {
+    cursor: pointer;
+    font-size: 2vw;
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
+    border: 0px;
+    padding: 1vh 6vw;
+    background-color: transparent;
+    color: var(--dark);
+}
+
+/* Set the space between decision buttons */
+
+.decision > :first-child {
+    margin-right: 5vw;
+}
+
+.decision > :first-child:hover {
+    border-radius: 78% 22% 20% 80% / 56% 82% 18% 44%;
+}
+
+.decision > :nth-child(2):hover {
+    border-radius: 80% 20% 80% 20% / 64% 63% 37% 36%;
+}
+
+.decision button:hover {
+    box-shadow: inset 8em 0 0 0 var(--dark);
+    color: var(--contrast);
+    transition: 0.3s;
+}
+
+ol {
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.conclusion span {
+    border-bottom: 4px solid var(--dark);
+}
