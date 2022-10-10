@@ -45,9 +45,6 @@ main {
     justify-content: center;
     width: 3.5rem;
     height: 3.5rem;
-    border-radius: 64% 36% 36% 64% / 30% 37% 63% 70%;
-    box-shadow: none;
-    transition: box-shadow 300ms 100ms ease-in;
 }
 
 .icon-button {
@@ -58,16 +55,14 @@ main {
     display: inline-flex;
     align-items: center;
     border: 0px;
+    border-radius: 64% 36% 36% 64% / 30% 37% 63% 70%;
+    box-shadow: inset 8em 0 0 0 var(--contrast);
 }
 
 .icon-button__icon {
     width: 3rem;
     height: 3rem;
     fill: var(--dark);
-}
-
-#start:hover {
-    box-shadow: inset 8em 0 0 0 var(--contrast);
 }
 
 #start:hover .icon-button {
